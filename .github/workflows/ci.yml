@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies and run tests for each agent
+      run: |
+        pip install -r agent_reqs/requirements.txt
+        pip install -r agent_arch/requirements.txt
+        pip install -r agent_docs/requirements.txt
+        # 테스트를 실행합니다. unittest를 통해 자동으로 test_*.py 파일을 찾아 실행합니다.
+        python -m unittest agent_arch/test_arch.py

@@ -1,0 +1,6 @@
+POST http://localhost:5001/design
+Content-Type: application/json
+
+{
+    "text": "AWS에 EC2와 RDS를 사용하는 웹 서비스를 구축해줘"
+}
