@@ -17,7 +17,6 @@ A2A 통신	Redis (Message Queue)	에이전트 간의 메시지 전달 및 협업
 문서화	PlantUML, Markdown	텍스트 기반 아키텍처 다이어그램 및 최종 문서 생성
 자동화	GitHub Actions	테스트 및 컨테이너 이미지 빌드 자동화 (CI/CD)
 
-Sheets로 내보내기
 🏗️ 프로젝트 구조
 프로젝트는 세 개의 독립적인 에이전트로 구성되며, Docker Compose를 통해 통합 관리됩니다.
 
@@ -34,6 +33,7 @@ infra-agent-project/
 ├── output/                    # 최종 결과물(.md)이 저장되는 로컬 폴더 (Volume)
 ├── docker-compose.yml         # 모든 서비스(3개 Agent + Redis) 정의 파일
 └── README.md
+
 ⚙️ 시작하는 방법 (Local Run)
 1. 환경 설정
 필수 설치 항목: Python, Git, Docker Desktop (Docker Compose 기능 포함)
